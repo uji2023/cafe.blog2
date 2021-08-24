@@ -17,7 +17,7 @@
     　　　　　 　　　　<!-- 画像を表示 -->
       　　　  　　　<img src="{{ $post->image }}">
    　　　      　@endif
-               <p class='body'>{{$post->body}}</p>
+               <p class='detail_place'>{{$post->detail_place}}</p>
                <p class='detail_foodname'>{{$post->detail_foodname}}</p>
                <p class='detail_cafeURL'>{{$post->detail_cafeURL}}</p>
            </div>

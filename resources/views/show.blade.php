@@ -19,9 +19,9 @@
           
    <div class='post'>
     <h2 class='title'>{{ $post->title}}</h2>
-    <p class='image'>{{ $post->image}}</p>
+    <img src="{{ $post->image}}" class='image'></img>
     <p class='detail_cafeURL'>{{$post->detail_cafeURL}}</p>
-    <p class='body'>{{$post->body}}</p>
+    <p class='detail_place'>{{$post->detail_place}}</p>
     <p class='detail_foodname'>{{$post->detail_foodname}}</p>
     <p class='updated_at'>{{$post->updated_at}}</p>
    </div>

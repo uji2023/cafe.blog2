@@ -26,10 +26,10 @@
                     <p class="URL__error" style="color:red">{{ $errors->first('post.detail_cafeURL') }}</p>
                 </div>
                 
-                <div class="body">
+                <div class="detail_place">
                     <h2>place</h2>    
-                    <textarea  name="post[body]" placeholder="place" > {{ $post->body }} </textarea>
-                    <p class="place__error" style="color:red">{{ $errors->first('post.body') }}</p>
+                    <textarea  name="post[detail_place]" placeholder="place" > {{ $post->detail_place }} </textarea>
+                    <p class="place__error" style="color:red">{{ $errors->first('post.detail_place') }}</p>
                 </div>
                 
                 <div class="detail_foodname">

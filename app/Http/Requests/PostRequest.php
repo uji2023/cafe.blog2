@@ -15,7 +15,7 @@ class PostRequest extends FormRequest
     {
         return [
             'post.title' => 'required|string|max:50',
-            'post.body' => 'required|string|max:500',
+            'post.detail_place' => 'required|string|max:500',
             'post.detail_cafeURL' => 'max:200',
             'post.detail_foodname' => 'required|string|max:100',
             

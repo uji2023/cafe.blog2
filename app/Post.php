@@ -16,7 +16,7 @@ class Post extends Model
     
     protected $fillable = [
         'title',
-        'body',
+        'detail_place',
         'detail_foodname',
         'detail_cafeURL',
 ];

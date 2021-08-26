@@ -11,7 +11,7 @@ class PostController extends Controller
     public function index(Post $post)
   {
     $posts = Post::all();  
-    return view('index')->with(['posts' => $post->getPaginateByLimit(4)]);
+    return view('index')->with(['posts' => $post->getPaginateByLimit(2)]);
   }
     public function show(Post $post)
   {
@@ -27,10 +27,10 @@ class PostController extends Controller
      $post->fill($input)->save();
           //s3アップロード開始
      $image = $request->file('image');
-      // バケットの`cafe-image/`フォルダへアップロード
+      // バケットの`myprefix`フォルダへアップロード
      $path = Storage::disk('s3')->putFile('myprefix',$image,'public');
       // アップロードした画像のフルパスを取得
-     $post->image = Storage::disk('s3')->url($path);
+     $post->image=Storage::disk('s3')->url($path);
      $post->save();
      return redirect('/posts/' . $post->id);
   }
@@ -44,10 +44,19 @@ class PostController extends Controller
   {
     $input = $request['post'];
     $post->fill($input)->save();
+         //s3アップロード開始
+    $image = $request->file('image');
+      // バケットの`myprefix`フォルダへアップロード
+    $path = Storage::disk('s3')->putFile('myprefix',$image,'public');
+      // アップロードした画像のフルパスを取得
+    $post->image=Storage::disk('s3')->url($path);
+    $post->save();
     return redirect('/posts/' . $post->id);
   }
   public function destroy(Post $post)
   {
+    $image=str_replace('https://cafe-blog-image.s3.ap-northeast-1.amazonaws.com/','',$post->image);
+    $s3_delete = Storage::disk('s3')->delete($image);
     $post->delete();
     return redirect('/');
   }

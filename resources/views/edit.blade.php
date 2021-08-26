@@ -8,7 +8,7 @@
     
     <body>
        <h1>CAFE BLOG</h1>
-            <form action="/posts/{{ $post->id }}" method="POST">
+            <form action="/posts/{{ $post->id }}" method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}   
                  @method('PUT')
                  

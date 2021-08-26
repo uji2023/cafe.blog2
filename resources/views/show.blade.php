@@ -8,21 +8,24 @@
   </head>
        
   <body>
-    <h1>CAFE BLOG</h1>
+    <h2>CAFE BLOG</h2>
     <p class='edit'>[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
-   <form action="/posts/{{ $post->id }}" id="form_delete" method="post">
-     @csrf
-     @method('DELETE')
-    <input type="submit" style="display:none">
+    <form action="/posts/{{ $post->id }}" id="form_delete" method="post">
+       @csrf
+       @method('DELETE')
+       <input type="submit" style="display:none">
     <p class='delete'>[<span onclick="return deletePost(this);">delete</span>]</p>
-   </form>
+    </form>
           
    <div class='post'>
-    <h2 class='title'>{{ $post->title}}</h2>
+    <h1 class='title'>{{ $post->title}}</h1>
     <img src="{{ $post->image}}" class='image'></img>
     <p class='detail_cafeURL'>{{$post->detail_cafeURL}}</p>
+    <?php echo "<strong><font color=\"blown\"> ~PLACE~ </font></strong>"?>
     <p class='detail_place'>{{$post->detail_place}}</p>
+    <?php echo "<strong><font color=\"blown\"> ~FOOD'S NAME~ </font></strong>"?>
     <p class='detail_foodname'>{{$post->detail_foodname}}</p>
+    <?php echo "<strong><font color=\"blown\"> ~DATE OF UPDATING~ </font></strong>"?>
     <p class='updated_at'>{{$post->updated_at}}</p>
    </div>
           

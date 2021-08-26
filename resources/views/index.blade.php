@@ -15,16 +15,12 @@
                <a href='/posts/{{$post->id}}'><h2 class='title'>{{$post->title}}</h2></a>
     　　　　　 　　　　@if($post->image)   　　　　 
     　　　　　 　　　　<!-- 画像を表示 -->
-      　　　  　　　<img src="{{ $post->image }}">
-   　　　      　@endif
-               <p class='detail_place'>{{$post->detail_place}}</p>
-               <p class='detail_foodname'>{{$post->detail_foodname}}</p>
-               <p class='detail_cafeURL'>{{$post->detail_cafeURL}}</p>
+      　　　  　　　<img src="{{ $post->image }}"></img>
+   　　　        　@endif
            </div>
           @endforeach
        </div>
-       <div class='paginate'>
-            {{ $posts->links() }}
-        </div>
+       <div class='paginate'>{{ $posts->links() }}
+      </div>
     </body>
 </html>

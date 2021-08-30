@@ -21,7 +21,7 @@ class CreatePostsTable extends Migration
             $table->text('detail_foodname');
             $table->timestamps();
             $table->softDeletes();
-            $table->string('image');
+            $table->string('image')->nullable();
             
         });
     }

@@ -18,7 +18,7 @@ class PostRequest extends FormRequest
             'post.detail_place' => 'required|string|max:500',
             'post.detail_cafeURL' => 'max:200',
             'post.detail_foodname' => 'required|string|max:100',
-            
+            'post.image' => 'required'|'image',
         ];
     }
 }

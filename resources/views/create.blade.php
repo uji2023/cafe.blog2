@@ -6,8 +6,8 @@
         <title>cafe.blog</title>
     </head>
     
-    <body>
-       <h1>CAFE BLOG</h1>
+     <body bgcolor="#ffefd5">
+       <h1><span style="color:#800000;">CAFE BLOG</span></h1>
             <form action="/posts" method="POST" enctype="multipart/form-data">
              　{{ csrf_field() }}   
              
@@ -18,6 +18,7 @@
                 </div> 
                 
                 <input type="file" name="image">  <!-- アップロードフォームの作成 -->
+                 <p class="image__error" style="color:red">{{ $errors->first('post.image') }}</p>
 
                 <div class="detail_cafeURL">
                      <h2>cafe's URL</h2>
@@ -27,13 +28,13 @@
             
                 <div class="detail_place">
                      <h2>place</h2>    
-                     <textarea  name="post[detail_place]" placeholder="place" >{{ old('post.detail_place') }}</textarea>
+                     <input type="text" name="post[detail_place]" placeholder="place" value="{{ old('post.detail_place') }}"/>
                      <p class="place__error" style="color:red">{{ $errors->first('post.detail_place') }}</p>
                 </div>
             
                 <div class="detail_foodname">
                     <h2>food's name</h2>    
-                    <input type="text" name="post[detail_foodname]" placeholder="food's name"value="{{ old('post.detail_foodname') }}"/>
+                    <textarea  name="post[detail_foodname]" placeholder="food's name" >{{ old('post.detail_foodname') }}</textarea>
                     <p class="food's name__error" style="color:red">{{ $errors->first('post.detail_foodname') }}</p>
                 </div>
             

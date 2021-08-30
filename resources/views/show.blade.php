@@ -18,11 +18,17 @@
    <div class='post'>
         <h1 class='title'>{{ $post->title}}</h1> 
         <img src="{{ $post->image}}" class='image'></img>
-        <?php echo "<strong><font color=\"blown\">~PLACE~</font></strong>"?>
+        
+        <div><?php echo "<strong><font color=\"blown\">~PLACE~</font></strong>"?></div>
+        
         <p class='detail_place'>{{$post->detail_place}}</p>
+        
         <?php echo "<strong><font color=\"blown\"> ~FOOD'S NAME~ </font></strong>"?>
+        
         <p class='detail_foodname'>{{$post->detail_foodname}}</p>
+    
         <?php echo "<strong><font color=\"blown\"> ~DATE OF UPDATING~ </font></strong>"?>
+        
         <p class='updated_at'>{{$post->updated_at}}</p>
         <p class='detail_cafeURL'><a href='{{$post->detail_cafeURL}}'>~CAFE'S URL~</a></p>
    </div>

@@ -82,17 +82,5 @@ class RouteServiceProvider extends ServiceProvider
              ->group(base_path('routes/api.php'));
     }
     
-    /**
-     * ユーザーが認証された
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  mixed  $user
-     * @return mixed
-     */
-    protected function authenticated(Request $request, $user)
-    {
-        return response([
-            //
-        ]);
-    }
+   
 }

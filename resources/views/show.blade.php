@@ -10,7 +10,7 @@
        
    <body>
   
-    <h2><span style="color:#800000;">CAFE BLOG</span></h2>
+    <h2>CAFE BLOG</h2>
        
       @if(Auth::check()) 
       <p class='edit'>[<a href="/posts/{{ $post->id }}/edit">edit</a>]</p>
@@ -27,14 +27,19 @@
         <?php echo "<strong><font color=\"blown\"> ~FOOD'S NAME~ </font></strong>"?>
         
         <p class='detail_foodname'>{{$post->detail_foodname}}</p>
-    
-        <?php echo "<strong><font color=\"blown\"> ~DATE OF UPDATING~ </font></strong>"?>
         
+    　　　@if(Auth::check())
+    　　　<?php echo "<strong><font color=\"blown\"> ~DATE OF UPDATING~ </font></strong>"?>
         <p class='updated_at'>{{$post->updated_at}}</p>
-        <p class='detail_cafeURL'><a href='{{$post->detail_cafeURL}}'>~CAFE'S URL~</a></p>
+        @endif
+        
+        <p class='detail_cafeURL'><a href='{{$post->detail_cafeURL}}'>~{{ $post->title}} URL Plese click here!!~</a></p>
    </div>
           
-   <div class='back'>[<a href='/'>back</a>]</div>
+   <div class='back'>[<a href='/'>Go to list</a>]</div>
+   
+   
+  
    
    @if(Auth::check())
    <form action="/posts/{{ $post->id }}" id="form_delete" method="post">
@@ -52,5 +57,6 @@
    }
    </script>
    @endif
+   
   </body>
 </html>

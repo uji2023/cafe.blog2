@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    
+  @extends('layouts.app')  
     <head>
       　<meta charset="utf-8">
         <title>cafe.blog</title>
     </head>
     
-    <body bgcolor="#ffefd5">
+    <body>
        <h1><span style="color:#800000;">CAFE BLOG</span></h1>
             <form action="/posts/{{ $post->id }}"  method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}   

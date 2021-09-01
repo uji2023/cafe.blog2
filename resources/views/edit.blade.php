@@ -8,7 +8,7 @@
     </head>
     
     <body>
-       <h1><span style="color:#800000;">CAFE BLOG</span></h1>
+       <h1>CAFE BLOG</h1>
             <form action="/posts/{{ $post->id }}"  method="POST" enctype="multipart/form-data">
                 {{ csrf_field() }}   
                  @method('PUT')

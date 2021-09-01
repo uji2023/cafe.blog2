@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+@extends('layouts.app')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     
     <head>
@@ -6,8 +7,8 @@
         <title>cafe.blog</title>
     </head>
     
-     <body bgcolor="#ffefd5">
-       <h1><span style="color:#800000;">CAFE BLOG</span></h1>
+     <body>
+       <h1>CAFE BLOG</h1>
             <form action="/posts" method="POST" enctype="multipart/form-data">
              　{{ csrf_field() }}   
              

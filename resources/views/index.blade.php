@@ -8,9 +8,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
     </head>
      <body>
-       <h1><span style="color:#800000;">CAFE BLOG</span></h1>
+       <h1>CAFE BLOG</h1>
        @if(Auth::check())
-       <p class='create'>[<a href='/posts/create'>create</a>]</p>
+       <p class='create'>[<a href='/create'>create</a>]</p>
        @endif
        
        <div class='posts'>

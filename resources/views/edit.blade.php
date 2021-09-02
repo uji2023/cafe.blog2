@@ -1,12 +1,13 @@
 <!DOCTYPE html>
-
+@extends('layouts.app') 
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-  @extends('layouts.app')  
+@section('content')   
     <head>
       　<meta charset="utf-8">
         <title>cafe.blog</title>
     </head>
     
+    <div style="text-align: center">
     <body>
        <h1>CAFE BLOG</h1>
             <form action="/posts/{{ $post->id }}"  method="POST" enctype="multipart/form-data">
@@ -43,5 +44,7 @@
             </form>
                 <div class='back'>[<a href="/posts/{{ $post->id}}">back</a>]</div>
     </body>
+    </div>
     
 </html>
+@endsection('content')

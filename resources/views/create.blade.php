@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 @extends('layouts.app')
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    
+ @section('content')    
     <head>
         <meta charset="utf-8">
         <title>cafe.blog</title>
     </head>
-    
+    <div style="text-align: center">
      <body>
        <h1>CAFE BLOG</h1>
             <form action="/posts" method="POST" enctype="multipart/form-data">
@@ -43,6 +43,7 @@
             </form>
         <div class='back'>[<a href='/'>back</a>]</div>
     </body>
+    </div>
     
 </html>
-
+@endsection('content') 
